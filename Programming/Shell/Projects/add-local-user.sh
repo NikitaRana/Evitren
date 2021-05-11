@@ -1,5 +1,4 @@
-# Project 1:
-
+#!/bin/bash
 #Shell script requirements:
 
 # The script needs to be executed with superuser root privileges

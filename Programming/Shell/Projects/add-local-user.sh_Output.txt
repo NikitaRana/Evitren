@@ -1,0 +1,34 @@
+[vagrant@localhost vagrant]$ ./add-local-user.sh
+Please execute the script with super user root privileges
+[vagrant@localhost vagrant]$ sudo ./add-local-user.sh
+Enter the username: tedison
+Enter your real name: Thomas Edison
+Enter to create a new password: Light.Bulb1
+The account for user Thomas Edison was created successfully.
+Changing password for user tedison.
+passwd: all authentication tokens updated successfully.
+Password creation successfull
+Expiring password for user tedison.
+passwd: Success
+Account creation successfull
+Created Username: tedison
+Created Password: Light.Bulb1
+Created at host: localhost
+[vagrant@localhost vagrant]$ tail -3 /etc/passwd
+einstein:x:1003:1004:Albert Einstein:/home/einstein:/bin/bash
+isaac:x:1004:1005:Isaac Newton:/home/isaac:/bin/bash
+tedison:x:1005:1006:Thomas Edison:/home/tedison:/bin/bash
+[vagrant@localhost vagrant]$ su - einstein
+Password:
+You are required to change your password immediately (root enforced)
+Changing password for einstein.
+(current) UNIX password:
+New password:
+Retype new password:
+[einstein@localhost ~]$ exit
+logout
+[vagrant@localhost vagrant]$ ./add-local-user.sh
+Please execute the script with super user root privileges
+[vagrant@localhost vagrant]$ echo ${?}
+1
+[vagrant@localhost vagrant]$

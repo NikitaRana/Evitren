@@ -1,1 +1,1 @@
-This sub-directory will contains all my projects developed in shell programming langauge.
+This sub-directory will contain all my projects developed in shell programming langauge.

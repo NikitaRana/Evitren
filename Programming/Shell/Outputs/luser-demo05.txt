@@ -1,0 +1,47 @@
+[vagrant@localhost vagrant]$ vim luser-demo05.sh
+[vagrant@localhost vagrant]$ [vagrant@localhost vagrant]$ ./luser-demo05.sh
+Your password is 8136
+More secure password having three random numbers: 8490213116126
+Epoch Time Password: 1620758452
+Epoch Time with Nano Seconds Password 1620758452946810047
+The hashed password is ec6a4909e27f0b4f14748499c7cd278cdc3a04d4  -
+The better versioned OTP password: fbeae9b4c810f2d2cbb976f9cf327b9e
+This password is 48 bits: 3d9e4bd258d8e09114fa4ef6d1cac65ca10d1a1d830ef2db
+Best Password with special characters: 3d9e4bd258d8e09114fa4ef6d1cac65ca10d1a1d830ef2db&
+[vagrant@localhost vagrant]$ ./luser-demo05.sh
+Your password is 20634
+More secure password having three random numbers: 12750227688804
+Epoch Time Password: 1620758460
+Epoch Time with Nano Seconds Password 1620758460383193170
+The hashed password is 62355e607d47508d185ede1093d5e99f9422bb68  -
+The better versioned OTP password: 2d3985cd5616ae756b8d4219905cd3f3
+This password is 48 bits: 5cde7f3cb20e159098b1f5a6bdf2a83ae7f7be096de038b2
+Best Password with special characters: 5cde7f3cb20e159098b1f5a6bdf2a83ae7f7be096de038b2(
+[vagrant@localhost vagrant]$ ./luser-demo05.sh
+Your password is 21988
+More secure password having three random numbers: 30714295928432
+Epoch Time Password: 1620758461
+Epoch Time with Nano Seconds Password 1620758461844146417
+The hashed password is 7ecfeed08eed654918f7794813fda879ba07ffde  -
+The better versioned OTP password: 69447259c65e86e61086f4be6ad61d74
+This password is 48 bits: 80ea2e67e28e4a501c9be144d549f9e4cefc00d67c0b3dc8
+Best Password with special characters: 80ea2e67e28e4a501c9be144d549f9e4cefc00d67c0b3dc8-
+[vagrant@localhost vagrant]$ ./luser-demo05.sh
+Your password is 7644
+More secure password having three random numbers: 252181889525347
+Epoch Time Password: 1620758462
+Epoch Time with Nano Seconds Password 1620758462873372756
+The hashed password is d32cbdb8dd355304e57999039930313c1da36fdb  -
+The better versioned OTP password: ba9e50ca6720ce3b58fac916ebaceb63
+This password is 48 bits: 272e85914a83e74237686b21705ef1321fce2776351c7296
+Best Password with special characters: 272e85914a83e74237686b21705ef1321fce2776351c7296$
+[vagrant@localhost vagrant]$ ./luser-demo05.sh
+Your password is 1716
+More secure password having three random numbers: 78871676732760
+Epoch Time Password: 1620758463
+Epoch Time with Nano Seconds Password 1620758463869580075
+The hashed password is 7c06268562b0f87f6e44d2775564d4c09e36ffea  -
+The better versioned OTP password: caea60988d571ef2fb61d570e397dccf
+This password is 48 bits: 68e5b0551fca16e289aa862e073cfcc587b101478c462a87
+Best Password with special characters: 68e5b0551fca16e289aa862e073cfcc587b101478c462a87+
+[vagrant@localhost vagrant]$

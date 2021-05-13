@@ -1,0 +1,13 @@
+[vagrant@localusers vagrant]$ ./luser-demo06.sh "Albert Einstein" "Thomas Edison" "Mariah Carrey"
+Displaying the command line arguments
+First command line argument: ./luser-demo06.sh
+Second command line argument: Albert Einstein
+Third command line argument: Thomas Edison
+The directory name is . and filename is luser-demo06.sh
+The number of command line arguments are 3
+Using @ special variable
+Albert Einstein: 44c79c6922ec7d8cb701bc404ad36b5ad594e5be2b736430
+Thomas Edison: e26651aa98a4a626a77c951d25bfbb5b35ec1161674c936d
+Mariah Carrey:: 2d8c500b8ae064bf960a0037eb0561f1bfd71baaca342753
+Using * special variable
+Albert Einstein Thomas Edison Mariah Carrey:: 2d8c500b8ae064bf960a0037eb0561f1bfd71baaca342753

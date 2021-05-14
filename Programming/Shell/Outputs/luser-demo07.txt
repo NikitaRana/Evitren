@@ -1,0 +1,51 @@
+[vagrant@localusers vagrant]$ ./luser-demo07.sh
+The value of element is 1
+Parameter 1:
+Parameter 2:
+Parameter 3:
+[vagrant@localusers vagrant]$ ./luser-demo07.sh apple
+The value of element is 1
+Parameter 1: apple
+Parameter 2:
+Parameter 3:
+Number of parameters: 1
+Parameter 1: apple
+Parameter 2:
+Parameter 3:
+
+[vagrant@localusers vagrant]$ ./luser-demo07.sh apple banana
+The value of element is 1
+Parameter 1: apple
+Parameter 2: banana
+Parameter 3:
+Number of parameters: 2
+Parameter 1: apple
+Parameter 2: banana
+Parameter 3:
+
+Number of parameters: 1
+Parameter 1: banana
+Parameter 2:
+Parameter 3:
+
+[vagrant@localusers vagrant]$ ./luser-demo07.sh apple banana beetroot
+The value of element is 1
+Parameter 1: apple
+Parameter 2: banana
+Parameter 3: beetroot
+Number of parameters: 3
+Parameter 1: apple
+Parameter 2: banana
+Parameter 3: beetroot
+
+Number of parameters: 2
+Parameter 1: banana
+Parameter 2: beetroot
+Parameter 3:
+
+Number of parameters: 1
+Parameter 1: beetroot
+Parameter 2:
+Parameter 3:
+
+[vagrant@localusers vagrant]$

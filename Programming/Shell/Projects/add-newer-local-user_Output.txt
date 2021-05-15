@@ -1,0 +1,51 @@
+[vagrant@localusers vagrant]$ ./add-newer-local-user.sh turing Alan Turing
+Please execute the script with superuser root privileges.
+[vagrant@localusers vagrant]$ sudo ./add-newer-local-user.sh turing Alan Turing
+
+Created Username: turing
+Created Password: b30d62b448f45f1b7b79e5b09ebb5477853747d27e524865
+Created at host: localusers
+[vagrant@localusers vagrant]$ sudo ./add-newer-local-user.sh woz Steve Wozniak
+Created Username: woz
+Created Password: f60a1be03c86c220bad0c97be034117cab45b41129bdebb7
+Created at host: localusers
+[vagrant@localusers vagrant]$ sudo ./add-newer-local-user.sh moore Gordon Moore
+Created Username: moore
+Created Password: 7c685f40c367d872c9553a05cef3273fff2bec9fc8a38c48
+Created at host: localusers
+[vagrant@localusers vagrant]$ tail -3 /etc/passwd
+turing:x:1009:1010:Alan Turing:/home/turing:/bin/bash
+woz:x:1010:1011:Steve Wozniak:/home/woz:/bin/bash
+moore:x:1011:1012:Gordon Moore:/home/moore:/bin/bash
+[vagrant@localusers vagrant]$ su - turing
+Password:
+You are required to change your password immediately (root enforced)
+Changing password for turing.
+(current) UNIX password:
+New password:
+Retype new password:
+[turing@localusers ~]$ exit
+logout
+[vagrant@localusers vagrant]$ echo ${?}
+0
+[vagrant@localusers vagrant]$ ./add-newer-local-user.sh
+Please execute the script with superuser root privileges.
+[vagrant@localusers vagrant]$ echo ${?}
+1
+[vagrant@localusers vagrant]$ ./add-newer-local-user.sh 1>std.out 2>std.err
+[vagrant@localusers vagrant]$ cat std.out
+[vagrant@localusers vagrant]$ cat std.err
+Please execute the script with superuser root privileges.
+[vagrant@localusers vagrant]$ sudo ./add-newer-local-user.sh
+Usage: ./add-newer-local-user.sh USER_NAME [COMMENT]..
+[vagrant@localusers vagrant]$ ./add-newer-local-user.sh 1>std.out 2>>std.err
+[vagrant@localusers vagrant]$ cat std.out
+[vagrant@localusers vagrant]$ cat std.err
+Please execute the script with superuser root privileges.
+Please execute the script with superuser root privileges.
+[vagrant@localusers vagrant]$ sudo ./add-newer-local-user.sh 1>std.out 2>>std.e
+rr
+[vagrant@localusers vagrant]$ cat std.err
+Please execute the script with superuser root privileges.
+Please execute the script with superuser root privileges.
+Usage: ./add-newer-local-user.sh USER_NAME [COMMENT]..

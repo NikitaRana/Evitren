@@ -1,0 +1,43 @@
+[vagrant@localusers vagrant]$ sudo ./add-new-local-user.sh brussell Bertrand Russell
+Account creation succeeded!!
+Password generation successfull
+Changing password for user brussell.
+passwd: all authentication tokens updated successfully.
+Account creation successfull
+Expiring password for user brussell.
+passwd: Success
+Created Username: brussell
+Created Password: e3d16b7fd89781d612bec814f5c55f0e49c9bb9dcae4f768
+Created at host: localusers
+[vagrant@localusers vagrant]$ sudo ./add-new-local-user.sh philapp Philosophy Application User
+Account creation succeeded!!
+Password generation successfull
+Changing password for user philapp.
+passwd: all authentication tokens updated successfully.
+Account creation successfull
+Expiring password for user philapp.
+passwd: Success
+Created Username: philapp
+Created Password: 6ac640f63e8079df84b84589a71b0e19e396da29e6ea8b03
+Created at host: localusers
+[vagrant@localusers vagrant]$ su - philapp
+Password:
+You are required to change your password immediately (root enforced)
+Changing password for philapp.
+(current) UNIX password:
+New password:
+Retype new password:
+[philapp@localusers ~]$ exit
+logout
+[vagrant@localusers vagrant]$ tail -10 /etc/passwd
+vagrant:x:1000:1000:vagrant:/home/vagrant:/bin/bash
+vboxadd:x:997:1::/var/run/vboxadd:/bin/false
+stanfordacademy:x:1001:1002::/home/stanfordacademy:/bin/bash
+jsmith:x:1002:1003:Jane Smith:/home/jsmith:/bin/bash
+einstein:x:1003:1004:Albert Einstein:/home/einstein:/bin/bash
+isaac:x:1004:1005:Isaac Newton:/home/isaac:/bin/bash
+tedison:x:1005:1006:Thomas Edison:/home/tedison:/bin/bash
+jlocke:x:1006:1007:John Locke:/home/jlocke:/bin/bash
+brussell:x:1007:1008:Bertrand Russell:/home/brussell:/bin/bash
+philapp:x:1008:1009:Philosophy Application User:/home/philapp:/bin/bash
+[vagrant@localusers vagrant]$

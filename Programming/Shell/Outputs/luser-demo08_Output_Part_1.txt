@@ -1,0 +1,132 @@
+[vagrant@localusers vagrant]$ ./luser-demo08.sh
+LINE contains: root:x:0:0:root:/root:/bin/bash
+
+Contents of /tmp/data
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+
+Appended Contents of /tmp/data
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+RANDOM 1100
+[vagrant@localusers vagrant]$ read X < /etc/centos-release
+[vagrant@localusers vagrant]$ echo ${X}
+CentOS Linux release 7.4.1708 (Core)
+[vagrant@localusers vagrant]$ read X 0< /etc/centos-release
+[vagrant@localusers vagrant]$ echo ${X}
+CentOS Linux release 7.4.1708 (Core)
+[vagrant@localusers vagrant]$ read X 0 < /etc/centos-release
+-bash: read: `0': not a valid identifier
+[vagrant@localusers vagrant]$ echo "${UID}" > uid
+[vagrant@localusers vagrant]$ cat uid
+1000
+[vagrant@localusers vagrant]$ echo "${UID}" 1> uid
+[vagrant@localusers vagrant]$ cat uid
+1000
+[vagrant@localusers vagrant]$ echo "${UID}" 1 > uid
+[vagrant@localusers vagrant]$ cat uid
+1000 1
+[vagrant@localusers vagrant]$ head -n1 /etc/passwd /etc/hosts
+==> /etc/passwd <==
+root:x:0:0:root:/root:/bin/bash
+
+==> /etc/hosts <==
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4[vagrant@localusers vagrant]$ head -n1 /etc/passwd /etc/fakefile
+==> /etc/passwd <==
+root:x:0:0:root:/root:/bin/bash
+head: cannot open ‘/etc/fakefile’ for reading: No such file or directory
+[vagrant@localusers vagrant]$ #in the above output standard output i.e. stdout as well as standard error i.e. stderr is generated.
+[vagrant@localusers vagrant]$ head -n1 /etc/passwd /etc/fakefile > head.out
+head: cannot open ‘/etc/fakefile’ for reading: No such file or directory
+[vagrant@localusers vagrant]$ # in the above command standard output is written to the head.out file and standard error is displayed to the screen
+[vagrant@localusers vagrant]$ cat head.out
+==> /etc/passwd <==
+root:x:0:0:root:/root:/bin/bash
+[vagrant@localusers vagrant]$ head -n1 /etc/passwd /etc/hosts /etc/fakefile 2>
+ head.out
+==> /etc/passwd <==
+root:x:0:0:root:/root:/bin/bash
+
+==> /etc/hosts <==
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+[vagrant@localusers vagrant]$ # in the above command standard output is diaplayed on screen whereas, standard error is written to the file head.out.
+[vagrant@localusers vagrant]$ cat head.out
+head: cannot open ‘/etc/fakefile’ for reading: No such file or directory
+[vagrant@localusers vagrant]$
+
+[vagrant@localusers vagrant]$ head -n1 /etc/passwd /etc/hosts /etc/fakefile 1>standard_output.out 2> standard_error.err
+[vagrant@localusers vagrant]$ cat standard_output.out
+==> /etc/passwd <==
+root:x:0:0:root:/root:/bin/bash
+
+==> /etc/hosts <==
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+[vagrant@localusers vagrant]$ cat standard_error.err
+head: cannot open ‘/etc/fakefile’ for reading: No such file or directory
+[vagrant@localusers vagrant]$
+[vagrant@localusers vagrant]$ head -n1 /etc/passwd /etc/hosts /etc/fakefile 1>
+>standard_output.out 2>> standard_error.err
+[vagrant@localusers vagrant]$ cat standard_output.out
+==> /etc/passwd <==
+root:x:0:0:root:/root:/bin/bash
+
+==> /etc/hosts <==
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+==> /etc/passwd <==
+root:x:0:0:root:/root:/bin/bash
+
+==> /etc/hosts <==
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+[vagrant@localusers vagrant]$ cat standard_error.err
+head: cannot open ‘/etc/fakefile’ for reading: No such file or directory
+head: cannot open ‘/etc/fakefile’ for reading: No such file or directory
+[vagrant@localusers vagrant]$
+[vagrant@localusers vagrant]$ head -n1 /etc/passwd /etc/hosts /etc/fakefile > standard_output_error.out_err 2>&1
+[vagrant@localusers vagrant]$ cat standard_output_error.out_err
+==> /etc/passwd <==
+root:x:0:0:root:/root:/bin/bash
+
+==> /etc/hosts <==
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+head: cannot open ‘/etc/fakefile’ for reading: No such file or directory
+
+[vagrant@localusers vagrant]$ tail -4 /etc/passwd /fakefile | cat -n
+tail: option used in invalid context -- 4
+[vagrant@localusers vagrant]$ tail -n4 /etc/passwd /fakefile | cat -n
+tail: cannot open ‘/fakefile’ for reading: No such file or directory
+     1  ==> /etc/passwd <==
+     2  tedison:x:1005:1006:Thomas Edison:/home/tedison:/bin/bash
+     3  jlocke:x:1006:1007:John Locke:/home/jlocke:/bin/bash
+     4  brussell:x:1007:1008:Bertrand Russell:/home/brussell:/bin/bash
+     5  philapp:x:1008:1009:Philosophy Application User:/home/philapp:/bin/bash
+[vagrant@localusers vagrant]$
+[vagrant@localusers vagrant]$ tail -n4 /etc/passwd /fakefile 2>&1| cat -n
+     1  ==> /etc/passwd <==
+     2  tedison:x:1005:1006:Thomas Edison:/home/tedison:/bin/bash
+     3  jlocke:x:1006:1007:John Locke:/home/jlocke:/bin/bash
+     4  brussell:x:1007:1008:Bertrand Russell:/home/brussell:/bin/bash
+     5  philapp:x:1008:1009:Philosophy Application User:/home/philapp:/bin/bash
+     6  tail: cannot open ‘/fakefile’ for reading: No such file or directory
+
+[vagrant@localusers vagrant]$ tail -n4 /etc/passwd /fakefile |& cat -n
+     1  ==> /etc/passwd <==
+     2  tedison:x:1005:1006:Thomas Edison:/home/tedison:/bin/bash
+     3  jlocke:x:1006:1007:John Locke:/home/jlocke:/bin/bash
+     4  brussell:x:1007:1008:Bertrand Russell:/home/brussell:/bin/bash
+     5  philapp:x:1008:1009:Philosophy Application User:/home/philapp:/bin/bash
+     6  tail: cannot open ‘/fakefile’ for reading: No such file or directory

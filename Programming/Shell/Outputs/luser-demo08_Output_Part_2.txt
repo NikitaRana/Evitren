@@ -1,0 +1,219 @@
+[vagrant@localusers vagrant]$ ./luser-demo08.sh
+# Redirect STDOUT to a file
+
+# Redirect STDIN from a file to a program
+LINE contains: root:x:0:0:root:/root:/bin/bash
+
+# Redirect STDOUT to a file, overwiritng the file
+
+Contents of /tmp/data
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+
+# Redirect STDOUT to a file, appending the file
+
+Appended Contents of /tmp/data
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+RANDOM 13516
+
+# Redirect STDIN to a program, using FD 0
+
+LINE FD contains: root:x:0:0:root:/root:/bin/bash
+
+# Redirect STDOUT to a file using FD 1, overwriting the file
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+
+# Redirect STDERR to a file using FD 2
+==> /etc/passwd <==
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+
+# Redirect STDOUT and STDERR to a file
+
+Contents of /tmp/data:
+==> /etc/passwd <==
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+head: cannot open ‘/fakefile’ for reading: No such file or directory
+
+# Redirect a STDOUT and STDERR through a pipe
+
+     1  ==> /etc/passwd <==
+     2  root:x:0:0:root:/root:/bin/bash
+     3  bin:x:1:1:bin:/bin:/sbin/nologin
+     4  daemon:x:2:2:daemon:/sbin:/sbin/nologin
+     5  head: cannot open ‘/fakefile’ for reading: No such file or directory
+
+#Send output to STDERR
+This is STDERR!
+[vagrant@localusers vagrant]$ ./luser-demo08.sh 2> error_file.err
+# Redirect STDOUT to a file
+
+# Redirect STDIN from a file to a program
+LINE contains: root:x:0:0:root:/root:/bin/bash
+
+# Redirect STDOUT to a file, overwiritng the file
+
+Contents of /tmp/data
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+
+# Redirect STDOUT to a file, appending the file
+
+Appended Contents of /tmp/data
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+RANDOM 810
+
+# Redirect STDIN to a program, using FD 0
+
+LINE FD contains: root:x:0:0:root:/root:/bin/bash
+
+# Redirect STDOUT to a file using FD 1, overwriting the file
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+
+# Redirect STDERR to a file using FD 2
+==> /etc/passwd <==
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+
+# Redirect STDOUT and STDERR to a file
+
+Contents of /tmp/data:
+==> /etc/passwd <==
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+head: cannot open ‘/fakefile’ for reading: No such file or directory
+
+# Redirect a STDOUT and STDERR through a pipe
+
+     1  ==> /etc/passwd <==
+     2  root:x:0:0:root:/root:/bin/bash
+     3  bin:x:1:1:bin:/bin:/sbin/nologin
+     4  daemon:x:2:2:daemon:/sbin:/sbin/nologin
+     5  head: cannot open ‘/fakefile’ for reading: No such file or directory
+
+#Send output to STDERR
+[vagrant@localusers vagrant]$ cat error_file.err
+This is STDERR!
+
+----------------FINAL OUTPUT-------------------------------
+[vagrant@localusers vagrant]$ ./luser-demo08.sh
+# Redirect STDOUT to a file
+
+# Redirect STDIN from a file to a program
+LINE contains: root:x:0:0:root:/root:/bin/bash
+
+# Redirect STDOUT to a file, overwiritng the file
+
+Contents of /tmp/data
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+
+# Redirect STDOUT to a file, appending the file
+
+Appended Contents of /tmp/data
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+RANDOM 24168
+
+# Redirect STDIN to a program, using FD 0
+
+LINE FD contains: root:x:0:0:root:/root:/bin/bash
+
+# Redirect STDOUT to a file using FD 1, overwriting the file
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+
+# Redirect STDERR to a file using FD 2
+==> /etc/passwd <==
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+
+# Redirect STDOUT and STDERR to a file
+
+Contents of /tmp/data:
+==> /etc/passwd <==
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+head: cannot open ‘/fakefile’ for reading: No such file or directory
+
+# Redirect a STDOUT and STDERR through a pipe
+
+     1  ==> /etc/passwd <==
+     2  root:x:0:0:root:/root:/bin/bash
+     3  bin:x:1:1:bin:/bin:/sbin/nologin
+     4  daemon:x:2:2:daemon:/sbin:/sbin/nologin
+     5  head: cannot open ‘/fakefile’ for reading: No such file or directory
+
+# Send output to STDERR
+This is STDERR!
+# DISCARD STDOUT
+Discarding STDOUT
+head: cannot open ‘/fakefile’ for reading: No such file or directory
+# DISCARD STDERR
+Discarding STDERR
+==> /etc/passwd <==
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+# DISCARD STDOUT AND STDERR
+Discarding STDOUT and STDERR
+[vagrant@localusers vagrant]$

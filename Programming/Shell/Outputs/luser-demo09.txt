@@ -1,0 +1,16 @@
+[vagrant@localusers vagrant]$ ./luser-demo09.sh
+Supply a valid condition.
+[vagrant@localusers vagrant]$ ./luser-demo09.sh start
+starting
+[vagrant@localusers vagrant]$ ./luser-demo09.sh status
+status
+[vagrant@localusers vagrant]$ ./luser-demo09.sh state
+status
+[vagrant@localusers vagrant]$ ./luser-demo09.sh stop
+stopping
+[vagrant@localusers vagrant]$ ./luser-demo09.sh running
+Supply a valid condition.
+[vagrant@localusers vagrant]$ ./luser-demo09.sh --state
+status
+[vagrant@localusers vagrant]$ ./luser-demo09.sh --status
+status

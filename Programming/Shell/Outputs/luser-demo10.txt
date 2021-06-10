@@ -1,0 +1,93 @@
+[vagrant@localusers vagrant]$ ./luser-demo10.sh
+Function definition using method 1
+Function definition using method 2
+[vagrant@localusers vagrant]$ vim luser-demo10.sh
+[vagrant@localusers vagrant]$ vim luser-demo10.sh
+[vagrant@localusers vagrant]$ ./luser-demo10.sh
+Hello!
+This is fun!
+[vagrant@localusers vagrant]$ vim luser-demo10.sh
+[vagrant@localusers vagrant]$ [vagrant@localusers vagrant]$./luser-demo10.shh
+This is fun!
+[vagrant@localusers vagrant]$ !v
+vim luser-demo10.sh
+[vagrant@localusers vagrant]$ [vagrant@localusers vagrant]$./luser-demo10.shh
+Hello!
+This is fun
+[vagrant@localusers vagrant]$ vim luser-demo10.sh
+[vagrant@localusers vagrant]$ [vagrant@localusers vagrant]$vim luser-demo10.sh
+[vagrant@localusers vagrant]$ logger
+^C
+[vagrant@localusers vagrant]$ type -a logger
+logger is /usr/bin/logger
+[vagrant@localusers vagrant]$ man logger
+[vagrant@localusers vagrant]$ !v
+vim luser-demo10.sh
+[vagrant@localusers vagrant]$ ./luser-demo10.sh
+Hello!
+This is fun
+[vagrant@localusers vagrant]$ tail /var/log/messages
+tail: cannot open ‘/var/log/messages’ for reading: Permission denied
+[vagrant@localusers vagrant]$ sudo tail /var/log/messages
+Jun 10 13:01:02 localusers systemd: Removed slice User Slice of root.
+Jun 10 13:01:02 localusers systemd: Stopping User Slice of root.
+Jun 10 14:01:01 localusers systemd: Created slice User Slice of root.
+Jun 10 14:01:01 localusers systemd: Starting User Slice of root.
+Jun 10 14:01:01 localusers systemd: Started Session 9 of user root.
+Jun 10 14:01:01 localusers systemd: Starting Session 9 of user root.
+Jun 10 14:01:01 localusers systemd: Removed slice User Slice of root.
+Jun 10 14:01:01 localusers systemd: Stopping User Slice of root.
+Jun 10 14:01:17 localusers luser-demo10.sh: Hello!
+Jun 10 14:01:17 localusers luser-demo10.sh: This is fun
+
+[vagrant@localusers vagrant]$ ./luser-demo10.sh
+Hello!
+This is fun
+Backing up /etc/passwd to /var/tmp/passwd.2021-06-10-127582501
+[vagrant@localusers vagrant]$ tail /var/log/messages
+[vagrant@localusers vagrant]$ sudo tail /var/log/messages
+Jun 10 14:26:13 localusers systemd: Removed slice User Slice of vagrant.
+Jun 10 14:26:13 localusers systemd: Stopping User Slice of vagrant.
+Jun 10 14:26:46 localusers systemd: Created slice User Slice of vagrant.
+Jun 10 14:26:46 localusers systemd: Starting User Slice of vagrant.
+Jun 10 14:26:46 localusers systemd: Started Session 10 of user vagrant.
+Jun 10 14:26:46 localusers systemd: Starting Session 10 of user vagrant.
+Jun 10 14:26:46 localusers systemd-logind: New session 10 of user vagrant.
+Jun 10 14:32:25 localusers luser-demo10.sh: Hello!
+Jun 10 14:32:25 localusers luser-demo10.sh: This is fun
+Jun 10 14:32:25 localusers luser-demo10.sh: Backing up /etc/passwd to /var/tmp/passwd.2021-06-10-127582501
+passwd.2021-06-10-127582501
+[vagrant@localusers vagrant]$ ls -l /etc/passwd
+-rw-r--r-- 1 root root 1763 May 15 08:14 /etc/passwd
+[vagrant@localusers vagrant]$ cp /etc/passwd /var/tmp
+[vagrant@localusers vagrant]$ ls -l /var/tmp
+total 32
+-rw-r--r-- 1 vagrant vagrant 1763 Jun 10 14:34 passwd
+-rw-r--r-- 1 vagrant vagrant 1763 May 15 08:14 passwd.2021-06-10-127582501
+drwx------ 3 root    root    4096 Jun 10 07:21 systemd-private-2dcbf51d95474ea7b28d88a2cb368a2b-chronyd.service-YUornk
+drwx------ 3 root    root    4096 Jun 10 03:21 systemd-private-6e93906c155c4a9b97beba865446b263-chronyd.service-97bMvn
+drwx------ 3 root    root    4096 May 11 12:14 systemd-private-82b7920ac6a64b69a4851708a4a29968-chronyd.service-0pAn62
+drwx------ 3 root    root    4096 May 20 11:09 systemd-private-a873791f691f4337b4ab08ee7baa939f-chronyd.service-NyP3Gi
+drwx------ 3 root    root    4096 May 26 13:55 systemd-private-ea4caf7d34444f7c86fae39ca5401e83-chronyd.service-e8ByNI
+drwx------ 3 root    root    4096 May 17 10:57 systemd-private-fa4befd26ed5495e8ca11f638deab9e4-chronyd.service-OUveaF
+[vagrant@localusers vagrant]$ date
+Thu Jun 10 14:35:07 EDT 2021
+[vagrant@localusers vagrant]$ ./luser-demo10.sh
+Hello!
+This is fun
+Backing up /etc/passwd to /var/tmp/passwd.2021-06-10-446805580
+File backup succeeded!
+[vagrant@localusers vagrant]$ tail /var/log/messages
+tail: cannot open ‘/var/log/messages’ for reading: Permission denied
+[vagrant@localusers vagrant]$ sudo tail /var/log/messages
+Jun 10 14:26:46 localusers systemd: Started Session 10 of user vagrant.
+Jun 10 14:26:46 localusers systemd: Starting Session 10 of user vagrant.
+Jun 10 14:26:46 localusers systemd-logind: New session 10 of user vagrant.
+Jun 10 14:32:25 localusers luser-demo10.sh: Hello!
+Jun 10 14:32:25 localusers luser-demo10.sh: This is fun
+Jun 10 14:32:25 localusers luser-demo10.sh: Backing up /etc/passwd to /var/tmp/passwd.2021-06-10-127582501
+Jun 10 14:40:11 localusers luser-demo10.sh: Hello!
+Jun 10 14:40:11 localusers luser-demo10.sh: This is fun
+Jun 10 14:40:11 localusers luser-demo10.sh: Backing up /etc/passwd to /var/tmp/passwd.2021-06-10-446805580
+Jun 10 14:40:11 localusers luser-demo10.sh: File backup succeeded!
+[vagrant@localusers vagrant]$

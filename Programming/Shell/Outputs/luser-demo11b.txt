@@ -1,0 +1,123 @@
+9f3e81f6@
+[vagrant@localusers vagrant]$ NUM=$((1+2))
+[vagrant@localusers vagrant]$ echo ${NUM}
+3
+[vagrant@localusers vagrant]$ NUM=$((10-1))
+[vagrant@localusers vagrant]$ echo ${NUM}
+9
+[vagrant@localusers vagrant]$ NUM=$((10*1))
+[vagrant@localusers vagrant]$ echo ${NUM}
+10
+[vagrant@localusers vagrant]$ NUM=$((10/2))
+[vagrant@localusers vagrant]$ echo ${NUM}
+5
+[vagrant@localusers vagrant]$ NUM=$((10/3))
+[vagrant@localusers vagrant]$ echo ${NUM}
+3
+[vagrant@localusers vagrant]$ type -a bc
+bc is /usr/bin/bc
+[vagrant@localusers vagrant]$ echo '6/4' | bc -l
+1.50000000000000000000
+[vagrant@localusers vagrant]$ bc -l
+bc 1.06.95
+Copyright 1991-1994, 1997, 1998, 2000, 2004, 2006 Free Software Foundation, Inc.
+This is free software with ABSOLUTELY NO WARRANTY.
+For details type `warranty'.
+5/3
+1.66666666666666666666
+1+2
+3
+^C
+(interrupt) Exiting bc.
+[vagrant@localusers vagrant]$ awk 'BEGIN {print 6/4}'
+1.5
+[vagrant@localusers vagrant]$ clear
+[vagrant@localusers vagrant]$ NUM=$((10%3))
+[vagrant@localusers vagrant]$ echo ${NUM}
+1
+[vagrant@localusers vagrant]$ DICEA='3'
+[vagrant@localusers vagrant]$ DICEB='4'
+[vagrant@localusers vagrant]$ TOTAL-$((DICEA+DICEB))
+-bash: TOTAL-7: command not found
+[vagrant@localusers vagrant]$ TOTAL=$((DICEA+DICEB))
+[vagrant@localusers vagrant]$ echo ${TOTAL}
+[vagrant@localusers vagrant]$ 
+
+# '$' is used for substitution and here is DICEA and DICEB inside the double parenthesis we dont want that.
+we are looking towards just changing the values of the variables and not substitution
+
+[vagrant@localusers vagrant]$ NUM='1'
+[vagrant@localusers vagrant]$ $(( NUM++ ))
+-bash: 1: command not found
+[vagrant@localusers vagrant]$ echo ${TOTAL}
+8
+[vagrant@localusers vagrant]$
+[vagrant@localusers vagrant]$ echo ${NUM}
+2
+[vagrant@localusers vagrant]$ NUM='3'
+[vagrant@localusers vagrant]$ $(( NUM-- ))
+-bash: 3: command not found
+[vagrant@localusers vagrant]$ echo ${NUM}
+2
+[vagrant@localusers vagrant]$ (( NUM += 5 ))
+[vagrant@localusers vagrant]$ echo ${NUM}
+7
+[vagrant@localusers vagrant]$ NUM=$(( NUM+=5 ))
+[vagrant@localusers vagrant]$ echo ${NUM}
+12
+[vagrant@localusers vagrant]$ type -a let
+let is a shell builtin
+[vagrant@localusers vagrant]$ help let | less
+
+Number of arguments: 1
+All args: jason
+First arg: jason
+Second arg:
+Third arg:
+OPTIND: 1
+After the shift
+Number of arguments: 1
+All args: jason
+First arg: jason
+Second arg:
+Third arg:
+Usage: ./luser-demo11b.sh [-vs] [-l LENGTH]
+Generate a random password.
+ -l       LENGTH Specify the password length.
+ -s       Append a special character to the password.
+ -v       Increase verbosity.
+[vagrant@localusers vagrant]$ echo $?
+1
+[vagrant@localusers vagrant]$ ./luser-demo11b.sh -s jason
+Number of arguments: 2
+All args: -s jason
+First arg: -s
+Second arg: jason
+Third arg:
+OPTIND: 2
+After the shift
+Number of arguments: 1
+All args: jason
+First arg: jason
+Second arg:
+Third arg:
+Usage: ./luser-demo11b.sh [-vs] [-l LENGTH]
+Generate a random password.
+ -l       LENGTH Specify the password length.
+ -s       Append a special character to the password.
+ -v       Increase verbosity.
+[vagrant@localusers vagrant]$ ./luser-demo11b.sh -s
+Number of arguments: 1
+All args: -s
+First arg: -s
+Second arg:
+Third arg:
+OPTIND: 2
+After the shift
+Number of arguments: 0
+All args:
+First arg:
+Second arg:
+Third arg:
+5974192f6ab4ea5f8ae28d6b108700e61b851eec20af2f56#
+[vagrant@localusers vagrant]$

@@ -1,0 +1,51 @@
+/luser-demo11.sh: illegal option -- x
+Invalid option. Try again!
+[vagrant@localusers vagrant]$ ./luser-demo11.sh -x
+./luser-demo11.sh: illegal option -- x
+Usage: ./luser-demo11.sh [-vs] [-l LENGTH]
+Generate a random password.
+ -l       LENGTH Specify the password length.
+ -s       Append a special character to the password.
+ -v       Increase verbosity.
+[vagrant@localusers vagrant]$ $?
+-bash: 1: command not found
+[vagrant@localusers vagrant]$ ./luser-demo11.sh -v
+Verbose mode on.
+[vagrant@localusers vagrant]$ ./luser-demo11.sh -v
+${MESSAGE}
+${MESSAGE}
+[vagrant@localusers vagrant]$ ./luser-demo11.sh -v
+Verbose mode on.
+Generating a password
+[vagrant@localusers vagrant]$ ./luser-demo11.sh -v
+Verbose mode on.
+Generating a password
+Done.
+Here is the password.
+eafb21b022d2460363b473838014595fe3ed99d4fd9abc62
+[vagrant@localusers vagrant]$ ./luser-demo11.sh -s
+head: cannot open ‘c1’ for reading: No such file or directory
+6d0ace8dc885a55d21d26d80e1f06e6027b2488c70da5460
+[vagrant@localusers vagrant]$ ./luser-demo11.sh -s
+9d02a59142310aa9f5266a2af3860abc8a494d16ff8c2b8b(
+[vagrant@localusers vagrant]$ ./luser-demo11.sh -sv
+Verbose mode on.
+Generating a password
+Selecting a random special character.
+Done.
+Here is the password.
+3da81c6e0db629811ca10509cb86d1ac35d0458cf30dfd5a^
+[vagrant@localusers vagrant]$ ./luser-demo11.sh -vs
+Verbose mode on.
+Generating a password
+Selecting a random special character.
+Done.
+Here is the password.
+f363c12181f7252887daf93843dffa2124a69525c06c5d95%
+[vagrant@localusers vagrant]$ ./luser-demo11.sh -l 8
+896c0a2d
+[vagrant@localusers vagrant]$ ./luser-demo11.sh -ls 8
+head: s: invalid number of bytes
+
+[vagrant@localusers vagrant]$ ./luser-demo11.sh -sl 8
+9f3e81f6@
